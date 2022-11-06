@@ -1,12 +1,13 @@
-const monoogse = require("mongoose")
+const mongoose = require('mongoose');
 
-const connect = () =>{
-    console.log("connected to the  database.")
-    return monoogse.connect(
-      // "mongodb+srv://caddycool:caddycool@cluster0.xarvi.mongodb.net/caddycool?retryWrites=true&w=majority"
-      "mongodb://localhost:27017/myapp"
-    );
-}
+module.exports = async function () {
+  try {
+    const db = await mongoose.connect('mongodb+srv://hanhtshh:mhsdm6dk@clothes.3gvxr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+    console.log('Ket noi den database thanh cong');
+  }
+  catch (err) {
+    console.log('Ket noi den database that bai');
+    process.exit(1);
+  }
+};
 
-
-module.exports = connect
