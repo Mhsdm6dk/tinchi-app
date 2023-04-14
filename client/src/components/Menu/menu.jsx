@@ -2,8 +2,8 @@ import "../Menu/menu.css"
 import profile from "../Menu/pic.svg";
 import { Link } from "react-router-dom";
 export function Menu() {
-    let name = localStorage.getItem("userName");
-    name = name.charAt(0).toUpperCase() + name.slice(1);
+    let name = "Hanh nguyen ";
+    name = name?.charAt(0)?.toUpperCase() + name?.slice(1);
     return <>
         <div className="menu">
             <div style={{ margin: "auto", marginTop: "20px" }}>
