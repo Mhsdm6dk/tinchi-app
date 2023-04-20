@@ -1,0 +1,15 @@
+.datetime-date {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.datetime-time {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.datetime-title{
+  margin-bottom: 10px;
+}

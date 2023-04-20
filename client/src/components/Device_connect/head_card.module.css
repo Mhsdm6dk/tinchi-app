@@ -1,0 +1,55 @@
+.head_cardBox {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  flex: 1;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+}
+.head_card {
+  padding: 0 10px;
+}
+.head_cardTitle {
+  width: fit-content;
+  background: rgb(17, 17, 30);
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  margin: 10px auto;
+}
+.head_cardSub {
+  border: 0.5px solid gray;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+.head_cardSub_detail {
+  border-top: 0.5px solid gray;
+  display: flex;
+  padding: 10px;
+}
+.head_cardSubBox {
+  overflow: auto;
+  max-height: 200px;
+}
+.head_cardSub_day {
+  padding: 10px;
+  color: rgb(43, 79, 209);
+  font-weight: 500;
+}
+.timeIcon {
+  width: 20px;
+}
+.classDetail {
+  margin-left: 5px;
+  margin-top: 2.5px;
+}
+
+.classDetail_time {
+  color: #71b3ff;
+}
+
+.classDetail_name {
+  font-weight: bold;
+  line-height: 24px;
+}

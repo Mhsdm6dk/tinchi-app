@@ -1,20 +1,25 @@
-import "./sub_card.css"
-export function SubCard ({styles,imgs,data,handleOnclick,order,index}){
-      
-   let title = data[order].title;
-   title = title.charAt(0).toUpperCase() + title.slice(1);
-    return<button onClick={()=>{
-        handleOnclick(data,Number(index));
-    }} className="sub_card" style={styles}>
-        <div className="in_sub" id="display">
+import { Link } from "react-router-dom";
+import "./sub_card.css";
+import classes from "./sub_card.module.css";
+export function SubCard({ styles, img, title, link }) {
+  return (
+    <div className={classes.sub_cardBox}>
+      <Link style={{ textDecoration: "none" }} to={link}>
+        <button className={classes.sub_card} style={styles}>
+          <div className={classes.in_sub}>
             <div>
-                <img src={imgs[data[order].title]} alt="new"/>
+              <img src={img} className={classes.img} alt="new" />
             </div>
             <div className="">
-                <h6 id="in_sub_head">{title}</h6>
-                <p id="in_sub_text" style={{color:"rgba(98, 180, 127, 1)"}}>Average: {data[order].Average}</p>
+              <h6 className={classes.in_sub_head}>{title}</h6>
+              <p
+                id="in_sub_text"
+                style={{ color: "rgba(98, 180, 127, 1)" }}
+              ></p>
             </div>
-                
-        </div>
-    </button>
+          </div>
+        </button>
+      </Link>
+    </div>
+  );
 }

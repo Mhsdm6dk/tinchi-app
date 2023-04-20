@@ -1,0 +1,40 @@
+.profileBackground {
+  background: #fcf2ff;
+  height: 100%;
+  padding-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.profileTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.profileDetail {
+  flex: 1;
+  background: rgb(243, 243, 243);
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+  overflow: hidden;
+}
+.profileDetailInfo {
+  margin: 5px 0;
+  background: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.profileDetailHead {
+  height: 100px;
+  background: white;
+}
+.profileDetailInfo_info {
+  padding: 15px 0;
+
+  border-bottom: 0.5px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: space-between;
+}

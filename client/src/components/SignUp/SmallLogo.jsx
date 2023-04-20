@@ -16,8 +16,8 @@ export default function logo(){
             <div className="sBarS"></div>
         </div>
         <div className="nameS">
-            <p className="name1S">Caddy</p>
-            <p className="name2S">Cool</p>
+            <p className="name1S">Class</p>
+            <p className="name2S">Management</p>
         </div>
         </div>
     )

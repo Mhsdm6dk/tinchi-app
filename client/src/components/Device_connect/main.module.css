@@ -1,0 +1,9 @@
+.bottom {
+  flex: 1;
+}
+.top {
+  /* position: relative; */
+
+  height: 188px;
+  background: #fcf2ff;
+}

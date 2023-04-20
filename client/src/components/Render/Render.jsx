@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../Home/logo';
-import Signup from "../SignUp/Signup"
+import Signin from '../SignIn/Signin';
 
 function Render() {
 
@@ -13,7 +13,7 @@ SetChange(true)
     },[])
 
     return (change)?(
-        <Signup/>
+        <Signin/>
     ): <Logo/>
 }
 
