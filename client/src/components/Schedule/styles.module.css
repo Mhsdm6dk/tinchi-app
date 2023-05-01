@@ -1,3 +1,13 @@
+.addClassBackground {
+  background: #fcf2ff;
+  height: 100%;
+  padding-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 30px;
+}
 .head_cardBox {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -19,14 +29,22 @@
   margin: 10px auto;
 }
 .head_cardSub {
-  border: 0.5px solid gray;
   border-radius: 7px;
   margin-bottom: 10px;
 }
+.listClassBox {
+  width: 100%;
+  margin-top: 20px;
+}
 .head_cardSub_detail {
-  border-top: 0.5px solid gray;
+  width: 100%;
   display: flex;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
   padding: 10px;
+  background: white;
+  border-radius: 7px;
+  align-items: center;
 }
 .head_cardSubBox {
   overflow: auto;
@@ -52,4 +70,17 @@
 .classDetail_name {
   font-weight: bold;
   line-height: 24px;
+}
+.returnButton {
+  color: #6f48eb;
+  font-size: 30px !important;
+  margin-bottom: 5px !important;
+}
+.returnButtonBox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  color: #6f48eb;
 }

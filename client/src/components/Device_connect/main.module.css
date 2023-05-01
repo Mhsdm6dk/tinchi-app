@@ -3,7 +3,6 @@
 }
 .top {
   /* position: relative; */
-
-  height: 188px;
   background: #fcf2ff;
+  padding-top: 40px;
 }

@@ -26,3 +26,16 @@
   border: none !important;
   outline: none !important;
 }
+.returnButton {
+  color: #6f48eb;
+  font-size: 30px !important;
+  margin-bottom: 5px !important;
+}
+.returnButtonBox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  color: #6f48eb;
+}

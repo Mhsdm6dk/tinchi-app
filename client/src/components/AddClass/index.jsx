@@ -3,6 +3,8 @@ import classes from "./styles.module.css";
 import "./styles.css";
 import { getListClassService } from "../../services/class";
 import ClassList from "../ClassList";
+import { Link } from "react-router-dom";
+import { KeyboardBackspace } from "@mui/icons-material";
 
 function AddClass() {
   const [keyword, setKeyword] = useState("");
@@ -15,7 +17,7 @@ function AddClass() {
   const handleSearch = async () => {
     try {
       const response = await getListClassService(30, 1, keyword);
-      console.log(response.classes)
+      console.log(response.classes);
       setResults(response?.classes);
     } catch (error) {
       console.error(error);
@@ -24,6 +26,11 @@ function AddClass() {
 
   return (
     <div className={classes.addClassBackground}>
+      <div className={classes.returnButtonBox}>
+        <Link to={"/Home"}>
+          <KeyboardBackspace className={classes.returnButton} />
+        </Link>
+      </div>
       <div className="search-box">
         <input
           type="text"

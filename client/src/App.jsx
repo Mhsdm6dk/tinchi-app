@@ -29,6 +29,7 @@ import caddyIcon from "./components/Footer/VectorTab1.svg";
 import Render from "./components/Render/Render";
 import Profile from "./components/Profile";
 import AddClass from "./components/AddClass";
+import Schedule from "./components/Schedule";
 // import Headerrr from "./components/Header/Header";
 
 function App() {
@@ -39,27 +40,6 @@ function App() {
     <Router>
       <div className={style.app}>
         {/* header */}
-        <div className={style.headerbody}>
-          <div>
-            <Link to="/Menu">
-              <span className={style.div1}>
-                <img src={img1} alt="menu"></img>
-              </span>
-            </Link>
-          </div>
-          {/* <div className={style.div1}><img src={img1} alt="menu"></img></div> */}
-          <div>
-            <span>
-              <img src={img2} alt="bell"></img>
-            </span>
-
-            <Link to="/linkdevice">
-              <span>
-                <img src={img4} alt="deviceConnect"></img>
-              </span>
-            </Link>
-          </div>
-        </div>
 
         {/* Body */}
         <div className={style.appBody}>
@@ -83,9 +63,12 @@ function App() {
             <Route path="/profile" exact>
               <Profile />
             </Route>
-            
+
             <Route path="/add-class" exact>
               <AddClass />
+            </Route>
+            <Route path="/schedule" exact>
+              <Schedule />
             </Route>
 
             <Route path="/Menu" exact>
