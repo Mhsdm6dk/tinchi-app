@@ -5,7 +5,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+}
+.header {
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: white;
+  padding-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2.6px;
+  margin-bottom: 5px;
+}
+.body {
+  padding: 10px;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profileTitle {
@@ -37,4 +56,19 @@
   border-bottom: 0.5px solid rgb(201, 201, 201);
   display: flex;
   justify-content: space-between;
+}
+.returnButton {
+  color: black;
+  font-size: 30px !important;
+  margin-bottom: 5px !important;
+}
+.returnButtonBox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+  bottom: 1px;
 }

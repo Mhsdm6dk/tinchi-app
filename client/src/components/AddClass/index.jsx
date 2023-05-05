@@ -26,21 +26,26 @@ function AddClass() {
 
   return (
     <div className={classes.addClassBackground}>
-      <div className={classes.returnButtonBox}>
-        <Link to={"/Home"}>
-          <KeyboardBackspace className={classes.returnButton} />
-        </Link>
+      <div className={classes.header}>
+        <div className={classes.returnButtonBox}>
+          <Link to={"/Home"}>
+            <KeyboardBackspace className={classes.returnButton} />
+          </Link>
+        </div>
+        Đăng ký môn học
       </div>
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Tìm kiếm lớp học"
-          value={keyword}
-          onChange={handleInputChange}
-          onKeyPress={(event) => event.key === "Enter" && handleSearch()}
-          className="search-input"
-        />
-        <ClassList results={results} />
+      <div className={classes.body}>
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Tìm kiếm lớp học"
+            value={keyword}
+            onChange={handleInputChange}
+            onKeyPress={(event) => event.key === "Enter" && handleSearch()}
+            className="search-input"
+          />
+          <ClassList results={results} />
+        </div>
       </div>
     </div>
   );

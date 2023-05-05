@@ -30,6 +30,8 @@ import Render from "./components/Render/Render";
 import Profile from "./components/Profile";
 import AddClass from "./components/AddClass";
 import Schedule from "./components/Schedule";
+import ListClassPage from "./components/ListClassPage";
+import ClassDetail from "./components/ClassDetail";
 // import Headerrr from "./components/Header/Header";
 
 function App() {
@@ -69,6 +71,12 @@ function App() {
             </Route>
             <Route path="/schedule" exact>
               <Schedule />
+            </Route>
+            <Route path="/list-class" exact>
+              <ListClassPage />
+            </Route>
+            <Route path="/class-detail" exact>
+              <ClassDetail />
             </Route>
 
             <Route path="/Menu" exact>

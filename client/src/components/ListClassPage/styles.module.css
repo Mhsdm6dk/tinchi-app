@@ -1,4 +1,4 @@
-.addClassBackground {
+.listClassPageBackGround {
   background: #fcf2ff;
   height: 100%;
   padding-bottom: 72px;
@@ -16,10 +16,38 @@
   background: white;
   padding-top: 50px;
   box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2.6px;
-  margin-bottom: 5px;
 }
 .body {
+  flex: 1;
+  width: 100%;
   padding: 10px;
+}
+.returnButton {
+  font-size: 30px !important;
+  margin-bottom: 5px !important;
+  color: black;
+}
+.returnButtonBox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  color: #6f48eb;
+  position: absolute;
+  left: 10px;
+  bottom: 1px;
+}
+
+.addClassBackground {
+  background: #fcf2ff;
+  height: 100%;
+  padding-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 30px;
 }
 .head_cardBox {
   width: 100%;
@@ -53,7 +81,7 @@
   width: 100%;
   display: flex;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px;
   background: white;
   border-radius: 7px;
@@ -70,6 +98,7 @@
 }
 .timeIcon {
   width: 20px;
+  margin-top: 3px;
 }
 .classDetail {
   margin-left: 5px;
@@ -85,7 +114,6 @@
   line-height: 24px;
 }
 .returnButton {
-  color: black;
   font-size: 30px !important;
   margin-bottom: 5px !important;
 }
@@ -95,7 +123,4 @@
   margin-bottom: 5px !important;
   font-size: 22px !important;
   font-weight: bold;
-  position: absolute;
-  left: 10px;
-  bottom: 1px;
 }
