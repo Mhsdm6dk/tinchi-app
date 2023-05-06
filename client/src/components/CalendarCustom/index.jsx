@@ -4,19 +4,35 @@ import "react-calendar/dist/Calendar.css";
 import "./ca.css";
 import EventMarker from "./eventMaker";
 
-export default function CalendarCustome() {
-  const [value, onChange] = useState(new Date());
+export default function CalendarCustome({
+  listSession,
+  selectedDate,
+  setSelectedDate,
+}) {
 
   function tileContent({ date, view }) {
     // Kiểm tra nếu ngày đó có sự kiện thì hiển thị chấm đỏ
-    if ((date.getDate() === 10 || date.getDate() === 11) && date.getMonth() === 5) {
+    if (
+      listSession.find((session) => {
+        const session_date = new Date(session.date);
+        return (
+          session_date.getDate() == date.getDate() &&
+          session_date.getMonth() == date.getMonth() &&
+          session_date.getFullYear() == date.getFullYear()
+        );
+      })
+    ) {
       return <EventMarker />;
     }
   }
 
   return (
     <div>
-      <Calendar onChange={onChange} tileContent={tileContent} value={value} />
+      <Calendar
+        onChange={setSelectedDate}
+        tileContent={tileContent}
+        value={selectedDate}
+      />
     </div>
   );
 }

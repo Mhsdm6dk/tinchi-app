@@ -37,9 +37,21 @@ const addClassService = async (listClassId) => {
     return results.data.data
 }
 
+const getClassDetailService = async (id) => {
+    const results = await axios.get(`${config.service_host}/class/get-class-info`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+        params: {
+            id
+        }
+    })
+    return results.data.data
+}
 
 export {
     getListClassService,
     checkScheduleService,
-    addClassService
+    addClassService,
+    getClassDetailService
 }

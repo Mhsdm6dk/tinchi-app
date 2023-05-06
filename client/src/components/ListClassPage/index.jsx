@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./styles.module.css";
 import timeIcon from "../Device_connect/3287905.png";
 import moveRight from "./right-arrow-icon-png-7.jpg";
 import classroomIcon from "../Device_connect/google-classroom.png";
 import { Avatar } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { getUserDetailService } from "../../services/user";
 
 const ListClassPage = () => {
+  const [listClass, setListClass] = useState([]);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const history = useHistory();
+  useEffect(() => {
+    const getUserInfo = async () => {
+      try {
+        const result = await getUserDetailService(userInfo?.id);
+        setListClass(result?.listClass);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUserInfo();
+  }, []);
   return (
     <div className={classes.listClassPageBackGround}>
       <div className={classes.header}>
@@ -22,62 +34,33 @@ const ListClassPage = () => {
       </div>
       <div className={classes.body}>
         <div className={classes.listClassBox}>
-          <Link to="/class-detail">
-            <div className={classes.head_cardSub_detail}>
-              <div style={{ display: "flex", flex: 1 }}>
-                <div className={classes.icon}>
-                  <img src={classroomIcon} className={classes.timeIcon} />
-                </div>
-                <div className={classes.classDetail}>
-                  <div className={classes.classDetail_name}>
-                    Kho dữ liệu và khai phá dữ liệu
+          {listClass?.map((classDetail) => (
+            <Link
+              to={`/class-detail/${classDetail?.id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className={classes.head_cardSub_detail}>
+                <div style={{ display: "flex", flex: 1 }}>
+                  <div className={classes.icon}>
+                    <img src={classroomIcon} className={classes.timeIcon} />
                   </div>
-                  <div className={classes.classDetail_place}>Sĩ số: 30</div>
-                  <div className={classes.classDetail_time}>
-                    <span style={{ color: "black" }}>Trạng thái: </span>
-                    OPEN
+                  <div className={classes.classDetail}>
+                    <div className={classes.classDetail_name}>
+                      {classDetail?.subject.name}
+                    </div>
+                    <div className={classes.classDetail_place}>
+                      Sĩ số: {classDetail?.total_student}
+                    </div>
+                    <div className={classes.classDetail_time}>
+                      <span style={{ color: "black" }}>Trạng thái: </span>
+                      {classDetail?.status}
+                    </div>
                   </div>
                 </div>
+                <img src={moveRight} style={{ width: "25px" }} />
               </div>
-              <img src={moveRight} style={{ width: "25px" }} />
-            </div>
-          </Link>
-          <div className={classes.head_cardSub_detail}>
-            <div style={{ display: "flex", flex: 1 }}>
-              <div className={classes.icon}>
-                <img src={classroomIcon} className={classes.timeIcon} />
-              </div>
-              <div className={classes.classDetail}>
-                <div className={classes.classDetail_name}>
-                  Kho dữ liệu và khai phá dữ liệu
-                </div>
-                <div className={classes.classDetail_place}>Sĩ số: 30</div>
-                <div className={classes.classDetail_time}>
-                  <span style={{ color: "black" }}>Trạng thái: </span>
-                  OPEN
-                </div>
-              </div>
-            </div>
-            <img src={moveRight} style={{ width: "25px" }} />
-          </div>
-          <div className={classes.head_cardSub_detail}>
-            <div style={{ display: "flex", flex: 1 }}>
-              <div className={classes.icon}>
-                <img src={classroomIcon} className={classes.timeIcon} />
-              </div>
-              <div className={classes.classDetail}>
-                <div className={classes.classDetail_name}>
-                  Kho dữ liệu và khai phá dữ liệu
-                </div>
-                <div className={classes.classDetail_place}>Sĩ số: 30</div>
-                <div className={classes.classDetail_time}>
-                  <span style={{ color: "black" }}>Trạng thái: </span>
-                  OPEN
-                </div>
-              </div>
-            </div>
-            <img src={moveRight} style={{ width: "25px" }} />
-          </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

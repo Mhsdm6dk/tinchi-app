@@ -6,6 +6,7 @@
     "@capacitor/cli": "^4.7.3",
     "@capacitor/core": "^4.7.3",
     "@capacitor/ios": "^4.7.3",
+    "@capacitor/android": "^4.7.3",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.16",

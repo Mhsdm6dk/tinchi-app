@@ -75,7 +75,7 @@ function App() {
             <Route path="/list-class" exact>
               <ListClassPage />
             </Route>
-            <Route path="/class-detail" exact>
+            <Route path="/class-detail/:id">
               <ClassDetail />
             </Route>
 
