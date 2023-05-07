@@ -1,11 +1,12 @@
 import SmallLogo from "./SmallLogo";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./signin.css";
 import { Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { Appcontext } from "../../context/Appcontext";
 import classes from "./styles.module.css";
+import { config } from "../../config";
 
 export default function Signin({ handle_user_name }) {
   // const [auth,setAuth]=useState(false)
@@ -28,7 +29,7 @@ export default function Signin({ handle_user_name }) {
   function submit() {
     try {
       axios
-        .post("http://localhost:1234/tinchi/user/login", user)
+        .post(`${config.service_host}/user/login`, user)
         .then((res) => {
           localStorage.setItem("token", res.data.data.token);
           localStorage.setItem(

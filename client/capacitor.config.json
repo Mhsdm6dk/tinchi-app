@@ -4,7 +4,7 @@
   "webDir": "build",
   "bundledWebRuntime": false,
   "environment": {
-    "API_URL": "http://192.168.1.16:1234",
+    "REACT_APP_API_URL": "http://192.168.1.9:1234/tinchi",
     "ENV_NAME": "dev"
   }
 }

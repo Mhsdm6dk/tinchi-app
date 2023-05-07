@@ -11,7 +11,13 @@ import { GroupMembers } from "./components/Community/Groups/GroupMembers.jsx";
 import LinkDevice from "./components/linkdevices/LinkDevice";
 import { Menu } from "./components/Menu/menu";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import style from "./App.module.css";
 
@@ -25,7 +31,7 @@ import img4 from "./components/Header/watchinactive.svg";
 import homeIconActive from "./components/Footer/homeimgactive.svg";
 import communityIcon from "./components/Footer/groupimg.svg";
 import schedule from "./3652221.png";
-import caddyIcon from "./components/Footer/VectorTab1.svg";
+import caddyIcon from "./user.png";
 import Render from "./components/Render/Render";
 import Profile from "./components/Profile";
 import AddClass from "./components/AddClass";
@@ -38,6 +44,7 @@ function App() {
   const handle_user_name = (data) => {
     localStorage.setItem("userName", data);
   };
+
   return (
     <Router>
       <div className={style.app}>
@@ -120,35 +127,45 @@ function App() {
         </div>
 
         {/* Footer */}
-        <div className={style.footerbody}>
-          <Link to="/Home">
-            <div>
-              <img src={homeIconActive} id="homeicon" alt="home"></img>
-            </div>
-          </Link>
-          <Link to="/PeopleConnect">
-            <div>
-              <img
-                src={schedule}
-                className={style.scheduleIcon}
-                alt="community"
-              ></img>
-            </div>
-          </Link>
-          <Link to="/Pills_front">
-            <div>
-              <img
-                className={style.fix}
-                src={caddyIcon}
-                id="caddyicon"
-                alt="caddy"
-              ></img>
-            </div>
-          </Link>
-        </div>
+        <FooterCustom />
       </div>
     </Router>
   );
 }
+
+const FooterCustom = () => {
+  const location = useLocation();
+  return (
+    location.pathname !== "/" &&
+    location.pathname !== "/signin" && (
+      <div className={style.footerbody}>
+        <Link to="/Home">
+          <div>
+            <img src={homeIconActive} id="homeicon" alt="home"></img>
+          </div>
+        </Link>
+        <Link to="/schedule">
+          <div>
+            <img
+              src={schedule}
+              className={style.scheduleIcon}
+              alt="community"
+            ></img>
+          </div>
+        </Link>
+        <Link to="/profile">
+          <div>
+            <img
+              className={style.scheduleIcon}
+              src={caddyIcon}
+        
+              alt="caddy"
+            ></img>
+          </div>
+        </Link>
+      </div>
+    )
+  );
+};
 
 export default App;

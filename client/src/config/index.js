@@ -1,3 +1,4 @@
 export const config = {
-    service_host: process.env.API_URL || "http://localhost:1234/tinchi"
+    service_host: "https://tinchi.onrender.com/tinchi"
 }
+console.log(config)
