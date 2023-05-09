@@ -2,6 +2,9 @@
   "name": "diabetesmanagementapp",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.20.0"
+  },
   "dependencies": {
     "@capacitor/cli": "^4.7.3",
     "@capacitor/core": "^4.7.3",
