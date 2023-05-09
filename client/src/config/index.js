@@ -1,4 +1,4 @@
 export const config = {
-    service_host: "https://tinchi-sv.onrender.com/tinchi"
+    service_host: "http://localhost:1234/tinchi"
 }
 console.log(config)

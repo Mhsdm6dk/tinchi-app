@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./styles.module.css";
 import "./styles.css";
 import { addClassService, checkScheduleService } from "../../services/class";
 import { Alert, AlertTitle, Button } from "@mui/material";
 
-function ClassList({ results = [] }) {
+function ClassList({ results = [], listClass = [] }) {
   const [listIdChecked, setListIdChecked] = useState([]);
   const [displayError, setDisplayError] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
 
+  useEffect(() => {
+    setListIdChecked(listClass.map((classDetail) => classDetail?.id));
+  }, [listClass]);
   const handleCheckboxChange = async (event, class_id) => {
     const checkId = listIdChecked.find((id) => id === class_id);
     if (checkId) {

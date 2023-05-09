@@ -20,10 +20,10 @@ const ClassDetail = () => {
         const classDetail = await getClassDetailService(id);
         console.log(classDetail);
         setListStudent(
-          classDetail?.listUserInfo?.filter((user) => user.role === 2)
+          classDetail?.listUserInfo?.filter((user) => user.role === 0)
         );
         setListTeacher(
-          classDetail?.listUserInfo?.filter((user) => user.role === 2)
+          classDetail?.listUserInfo?.filter((user) => user.role === 1)
         );
       } catch (error) {
         console.log(error);
