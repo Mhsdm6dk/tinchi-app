@@ -106,9 +106,18 @@ function ClassList({ results = [], listClass = [] }) {
       <ul className="product-items">
         {results?.map((class_item) => (
           <li className={classes.classBox} key={class_item.id}>
-            <span>
-              {class_item?.subject.name} - {class_item?.group}
-            </span>
+            <div>
+              <div className={classes.classDetailAt}>
+                {class_item?.subject.name} - {class_item?.group}
+              </div>
+              <div className={classes.classDetailAt}>
+                Trạng thái môn học: {class_item?.status}
+              </div>
+              <div className={classes.classDetailAt}>
+                Sĩ số hiện tại: {class_item?.total_student}
+              </div>
+            </div>
+
             <input
               type="checkbox"
               checked={
