@@ -124,7 +124,7 @@ export function HeadCard({ data, imgs, order, logos }) {
                           {session.class_name}
                         </div>
                         <div className={classes.classDetail_place}>
-                          Địa điểm: 405-A2
+                          Địa điểm: {session?.place}
                         </div>
                       </div>
                     </div>
